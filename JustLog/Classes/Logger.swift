@@ -55,7 +55,9 @@ public final class Logger: NSObject {
             }
         }
     }
-    
+
+    private var dateFormatter = ISO8601DateFormatter()
+
     public var logTypeKey = "log_type"
     
     public var fileKey = "file"
@@ -312,7 +314,7 @@ extension Logger {
         fileMetadata[iosVersionKey] = UIDevice.current.systemVersion
         fileMetadata[deviceTypeKey] = UIDevice.current.platform()
         fileMetadata[appBundleID] = Bundle.main.bundleIdentifier
-        fileMetadata[deviceTimestampKey] = "\(currentDate.timeIntervalSince1970)"
+        fileMetadata[deviceTimestampKey] = dateFormatter.string(from: currentDate)
         
         return fileMetadata
     }
