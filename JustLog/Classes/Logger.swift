@@ -202,45 +202,45 @@ public final class Logger: NSObject {
 
 extension Logger: Logging {
     
-    public func verbose(_ message: String, error: NSError?, userInfo: [String : Any]?, _ file: StaticString, _ function: StaticString, _ line: UInt) {
+    public func verbose(_ message: String, error: NSError?, userInfo: [String : Any]?, date: Date = Date(), _ file: StaticString, _ function: StaticString, _ line: UInt) {
         let file = String(describing: file)
         let function = String(describing: function)
         let updatedUserInfo = [logTypeKey: "verbose"].merged(with: userInfo ?? [String : String]())
-        log(.verbose, message, error: error, userInfo: updatedUserInfo, file, function, line)
+        log(.verbose, message, error: error, userInfo: updatedUserInfo, date: date, file, function, line)
     }
     
-    public func debug(_ message: String, error: NSError?, userInfo: [String : Any]?, _ file: StaticString, _ function: StaticString, _ line: UInt) {
+    public func debug(_ message: String, error: NSError?, userInfo: [String : Any]?, date: Date = Date(), _ file: StaticString, _ function: StaticString, _ line: UInt) {
         let file = String(describing: file)
         let function = String(describing: function)
         let updatedUserInfo = [logTypeKey: "debug"].merged(with: userInfo ?? [String : String]())
-        log(.debug, message, error: error, userInfo: updatedUserInfo, file, function, line)
+        log(.debug, message, error: error, userInfo: updatedUserInfo, date: date, file, function, line)
     }
     
-    public func info(_ message: String, error: NSError?, userInfo: [String : Any]?, _ file: StaticString, _ function: StaticString, _ line: UInt) {
+    public func info(_ message: String, error: NSError?, userInfo: [String : Any]?, date: Date = Date(), _ file: StaticString, _ function: StaticString, _ line: UInt) {
         let file = String(describing: file)
         let function = String(describing: function)
         let updatedUserInfo = [logTypeKey: "info"].merged(with: userInfo ?? [String : String]())
-        log(.info, message, error: error, userInfo: updatedUserInfo, file, function, line)
+        log(.info, message, error: error, userInfo: updatedUserInfo, date: date, file, function, line)
     }
     
-    public func warning(_ message: String, error: NSError?, userInfo: [String : Any]?, _ file: StaticString, _ function: StaticString, _ line: UInt) {
+    public func warning(_ message: String, error: NSError?, userInfo: [String : Any]?, date: Date = Date(), _ file: StaticString, _ function: StaticString, _ line: UInt) {
         let file = String(describing: file)
         let function = String(describing: function)
         let updatedUserInfo = [logTypeKey: "warning"].merged(with: userInfo ?? [String : String]())
-        log(.warning, message, error: error, userInfo: updatedUserInfo, file, function, line)
+        log(.warning, message, error: error, userInfo: updatedUserInfo, date: date, file, function, line)
 
     }
     
-    public func error(_ message: String, error: NSError?, userInfo: [String : Any]?, _ file: StaticString, _ function: StaticString, _ line: UInt) {
+    public func error(_ message: String, error: NSError?, userInfo: [String : Any]?, date: Date = Date(), _ file: StaticString, _ function: StaticString, _ line: UInt) {
         let file = String(describing: file)
         let function = String(describing: function)
         let updatedUserInfo = [logTypeKey: "error"].merged(with: userInfo ?? [String : Any]())
-        log(.error, message, error: error, userInfo: updatedUserInfo, file, function, line)
+        log(.error, message, error: error, userInfo: updatedUserInfo, date: date, file, function, line)
     }
     
-    internal func log(_ type: LogType, _ message: String, error: NSError?, userInfo: [String : Any]?, _ file: String, _ function: String, _ line: UInt) {
+    internal func log(_ type: LogType, _ message: String, error: NSError?, userInfo: [String : Any]?, date: Date = Date(), _ file: String, _ function: String, _ line: UInt) {
         
-        let messageToLog = logMessage(message, error: error, userInfo: userInfo, file, function, line)
+        let messageToLog = logMessage(message, error: error, userInfo: userInfo, currentDate: date, file, function, line)
         
         if !internalLogger.destinations.isEmpty {
             sendLogMessage(with: type, logMessage: sanitize(messageToLog, type), file, function, line)

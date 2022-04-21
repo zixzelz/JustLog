@@ -14,7 +14,6 @@
 		4D2F04FC20DD2FF9004286A7 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6028109206555D000348BCE /* Logging.swift */; };
 		4D2F04FD20DD2FF9004286A7 /* FileDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6028107206555D000348BCE /* FileDestination.swift */; };
 		4D2F04FE20DD2FF9004286A7 /* Dictionary+Flattening.swift in Sources */ = {isa = PBXBuildFile; fileRef = A602810D206555D000348BCE /* Dictionary+Flattening.swift */; };
-		4D2F04FF20DD2FF9004286A7 /* AsyncSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6028105206555D000348BCE /* AsyncSocketManager.swift */; };
 		4D2F050020DD2FF9004286A7 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6028108206555D000348BCE /* Logger.swift */; };
 		4D2F050120DD2FF9004286A7 /* LogstashDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = A602810A206555D000348BCE /* LogstashDestination.swift */; };
 		4D2F050220DD2FF9004286A7 /* NSError+Readability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6028110206555D000348BCE /* NSError+Readability.swift */; };
@@ -25,7 +24,6 @@
 		4D2F050820DD2FF9004286A7 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60281272065560F00348BCE /* SwiftyBeaver.framework */; };
 		4D2F050A20DD2FF9004286A7 /* JustLog.h in Headers */ = {isa = PBXBuildFile; fileRef = A60280F92065559400348BCE /* JustLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A60280FB2065559400348BCE /* JustLog.h in Headers */ = {isa = PBXBuildFile; fileRef = A60280F92065559400348BCE /* JustLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A6028116206555D000348BCE /* AsyncSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6028105206555D000348BCE /* AsyncSocketManager.swift */; };
 		A6028117206555D000348BCE /* ConsoleDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6028106206555D000348BCE /* ConsoleDestination.swift */; };
 		A6028118206555D000348BCE /* FileDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6028107206555D000348BCE /* FileDestination.swift */; };
 		A6028119206555D000348BCE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6028108206555D000348BCE /* Logger.swift */; };
@@ -50,7 +48,6 @@
 		A60280F62065559400348BCE /* JustLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JustLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A60280F92065559400348BCE /* JustLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JustLog.h; sourceTree = "<group>"; };
 		A60280FA2065559400348BCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6028105206555D000348BCE /* AsyncSocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncSocketManager.swift; sourceTree = "<group>"; };
 		A6028106206555D000348BCE /* ConsoleDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleDestination.swift; sourceTree = "<group>"; };
 		A6028107206555D000348BCE /* FileDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDestination.swift; sourceTree = "<group>"; };
 		A6028108206555D000348BCE /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -130,7 +127,6 @@
 		A6028103206555D000348BCE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A6028105206555D000348BCE /* AsyncSocketManager.swift */,
 				A6028106206555D000348BCE /* ConsoleDestination.swift */,
 				A6028107206555D000348BCE /* FileDestination.swift */,
 				A6028108206555D000348BCE /* Logger.swift */,
@@ -300,7 +296,6 @@
 				4D2F04FC20DD2FF9004286A7 /* Logging.swift in Sources */,
 				4D2F04FD20DD2FF9004286A7 /* FileDestination.swift in Sources */,
 				4D2F04FE20DD2FF9004286A7 /* Dictionary+Flattening.swift in Sources */,
-				4D2F04FF20DD2FF9004286A7 /* AsyncSocketManager.swift in Sources */,
 				4D2F050020DD2FF9004286A7 /* Logger.swift in Sources */,
 				4D2F050120DD2FF9004286A7 /* LogstashDestination.swift in Sources */,
 				4D2F050220DD2FF9004286A7 /* NSError+Readability.swift in Sources */,
@@ -322,7 +317,6 @@
 				A602811A206555D000348BCE /* Logging.swift in Sources */,
 				A6028118206555D000348BCE /* FileDestination.swift in Sources */,
 				A602811D206555D000348BCE /* Dictionary+Flattening.swift in Sources */,
-				A6028116206555D000348BCE /* AsyncSocketManager.swift in Sources */,
 				A6028119206555D000348BCE /* Logger.swift in Sources */,
 				A602811B206555D000348BCE /* LogstashDestination.swift in Sources */,
 				A6028120206555D000348BCE /* NSError+Readability.swift in Sources */,
