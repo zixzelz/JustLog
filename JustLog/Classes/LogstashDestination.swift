@@ -109,8 +109,13 @@ public class LogstashDestination: BaseDestination  {
                 }
                 
                 if let unsent = missing {
-                    self.logsToShip.merge(unsent) { lhs, rhs in lhs }
-                    self.printActivity("🔌 <LogstashDestination>, \(unsent.count) failed tasks")
+                    if unsent.count < 100 {
+                        self.logsToShip.merge(unsent) { lhs, rhs in lhs }
+                        self.printActivity("🔌 <LogstashDestination>, \(unsent.count) failed tasks")
+                    } else {
+                        self.logsToShip = [LogTag: LogContent]()
+                        self.printActivity("🔌 <LogstashDestination>, Clear failed tasks history")
+                    }
                 }
                 completionHandler(error)
             }
