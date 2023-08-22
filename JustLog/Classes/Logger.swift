@@ -70,9 +70,10 @@ public final class Logger: NSObject {
     public var appBundleID = "app_bundle_ID"
     public var deviceTimestampKey = "device_timestamp"
 
-    public var errorDomain = "error_domain"
-    public var errorCode = "error_code"
-    
+    public var errorDomain = "error.domain"
+    public var errorCode = "error.code"
+    public var errorDescription = "error.description"
+
     public static let shared = Logger()
     
     // file conf
@@ -291,6 +292,10 @@ extension Logger {
             let errorDictionaries = error.disassociatedErrorChain()
                 .map { errorDictionary(for: $0) }
                 .filter { JSONSerialization.isValidJSONObject($0) }
+
+            if let mainError = errorDictionaries.first {
+                retVal.merge(mainError) { current, _ in current }
+            }
             retVal[errorsConst] = errorDictionaries
         }
         
@@ -324,6 +329,11 @@ extension Logger {
         var errorInfo = [errorDomain: error.domain,
                          errorCode: error.code] as [String : Any]
         let errorUserInfo = error.humanReadableError().userInfo
+
+        if !error.localizedDescription.isEmpty {
+            errorInfo[errorDescription] = error.localizedDescription
+        }
+
         errorInfo[userInfoConst] = errorUserInfo
         return errorInfo
     }
